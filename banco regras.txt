@@ -1,0 +1,43 @@
+1. Abertura de conta:
+● O usuário cria um nome, CPF (ou ID), e define uma senha.
+● Saldo inicial pode ser zero ou definido.
+2. Login:
+● O sistema pede CPF e senha.
+● Só permite acessar o menu da conta se os dados estiverem corretos.
+3. Menu da conta:
+● Ver saldo
+● Fazer depósito
+● Fazer saque
+● Transferir para outro usuário
+● Ver extrato (só um resumo textual com variáveis, como: "última ação: depósito de R$
+50")
+● Sair
+4. Transferência:
+● O sistema deve verificar se o CPF de destino existe.
+● Transferência só acontece se o saldo for suficiente.
+Exemplo de fluxo:
+(Assim que vai aparecer na telinha preta)
+--- Bem-vindo à Agência XPTO ---
+1 - Criar conta
+2 - Fazer login
+3 - Sair
+> Escolha: 1
+Digite seu nome: João
+Digite seu CPF: 123
+Crie uma senha: 1234
+Conta criada com sucesso!
+--- Faça login ---
+CPF: 123
+Senha: 1234
+Login bem-sucedido!
+--- MENU ---
+1 - Ver saldo
+2 - Depositar
+3 - Sacar
+4 - Transferir
+5 - Ver extrato
+6 - Sair
+> Escolha: 2
+Digite valor para depósito: 100
+Depósito realizado!
+Seu saldo: R$ 100
