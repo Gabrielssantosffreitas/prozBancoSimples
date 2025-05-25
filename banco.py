@@ -2,6 +2,8 @@ userCpf =''
 userNome=''
 userSenha=''
 userSaldo = 0
+userUltimaAcao = " sua conta foi iniciada agora "
+outraConta = 12311122234
 
 while True:
     print('--- Bem-vindo à Agência XPTO --- ')
@@ -64,6 +66,8 @@ while True:
                         print("\n")
                         if valorDeposito > 0 :
                             userSaldo = userSaldo + valorDeposito
+                            userUltimaAcao = "DEPOSITO DE ",valorDeposito
+
                         else:
                             print("esse valor e invalido tente novamente")
                             print('\n')
@@ -73,6 +77,7 @@ while True:
                         if valorSacar > 0: 
                             if userSaldo > valorSacar:
                                 userSaldo = userSaldo - valorSacar
+                                userUltimaAcao = "SAQUE DE ", valorSacar
                             else:
                                 print("Você não possui essa quantia para sacar ")
                                 print("\n")
@@ -80,9 +85,26 @@ while True:
                             print("esse valor e invalido")
                             print("\n")
                     elif escolhaMenu == 4:
-                        print("transferir")
+                        valorTransferencia = float(input('Digite valor para a Tranferencia: '))
+                        cpfContaTranferencia = int(input(' CPF da conta que deseja tranferir : '))
+                        print("\n")
+                        if valorTransferencia > 0 : 
+                            if userSaldo > valorTransferencia:
+                                if cpfContaTranferencia == outraConta:
+                                    userSaldo =userSaldo - valorTransferencia
+                                else:
+                                    print("essa conta nao existe")
+                                    print("\n")
+                            else:
+                                print("você não possui esse dinheiro")
+                                print('\n')                      
+                        else:
+                            print("esse valor e invalido ")
+                            print("\n")
+
                     elif escolhaMenu == 5:
-                        print("ver extrato")
+                        print('Ultima ação feita foi : ', userUltimaAcao)
+                        print("\n")
                     elif escolhaMenu == 6:
                         print(" Você saiu do Menu ")
                         break
