@@ -1,6 +1,7 @@
 userCpf =''
 userNome=''
 userSenha=''
+userSaldo = 0
 
 while True:
     print('--- Bem-vindo à Agência XPTO --- ')
@@ -29,6 +30,7 @@ while True:
         
         if userNome =='' and userCpf =='' and userSenha =='':
             print("Voce não possui uma conta, porfavor crie uma conta")
+            print('\n')
         else:
             print('------------- FAÇA SEU LOGIN-----------------')
             cpf = str(input("CPF : "))
@@ -52,13 +54,31 @@ while True:
                     print('6 - Sair')
 
                     escolhaMenu = int(input("> Escolha : "))
+                    print("\n")
 
                     if escolhaMenu == 1:
-                        print('ver saldo')
+                        print('Seu saldo: R$ ', userSaldo)
+
                     elif escolhaMenu == 2:
-                        print("Depositar")
+                        valorDeposito = float(input('Digite valor para depósito: '))
+                        print("\n")
+                        if valorDeposito > 0 :
+                            userSaldo = userSaldo + valorDeposito
+                        else:
+                            print("esse valor e invalido tente novamente")
+                            print('\n')
+
                     elif escolhaMenu == 3:
-                        print("sacar")
+                        valorSacar = float(input('Digite valor para o saque :'))
+                        if valorSacar > 0: 
+                            if userSaldo > valorSacar:
+                                userSaldo = userSaldo - valorSacar
+                            else:
+                                print("Você não possui essa quantia para sacar ")
+                                print("\n")
+                        else:
+                            print("esse valor e invalido")
+                            print("\n")
                     elif escolhaMenu == 4:
                         print("transferir")
                     elif escolhaMenu == 5:
