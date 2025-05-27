@@ -1,3 +1,4 @@
+
 userCpf =''
 userNome=''
 userSenha=''
@@ -66,7 +67,9 @@ while True:
                         print("\n")
                         if valorDeposito > 0 :
                             userSaldo = userSaldo + valorDeposito
-                            userUltimaAcao = "DEPOSITO DE ",valorDeposito
+                            print("deposito feito com sucesso ")
+                            print('\n')
+                            userUltimaAcao = 'DEPOSITO DE ', valorDeposito
 
                         else:
                             print("esse valor e invalido tente novamente")
@@ -77,7 +80,9 @@ while True:
                         if valorSacar > 0: 
                             if userSaldo > valorSacar:
                                 userSaldo = userSaldo - valorSacar
-                                userUltimaAcao = "SAQUE DE ", valorSacar
+                                userUltimaAcao = 'SAQUE DE', valorSacar
+                                print("saque feito com sucesso ")
+                                print('\n')
                             else:
                                 print("Você não possui essa quantia para sacar ")
                                 print("\n")
@@ -92,6 +97,8 @@ while True:
                             if userSaldo > valorTransferencia:
                                 if cpfContaTranferencia == outraConta:
                                     userSaldo =userSaldo - valorTransferencia
+                                    userUltimaAcao = 'TRANFERENCIA PARA ',cpfContaTranferencia ,"de ",valorSacar
+                                    print('sua trasferencia foi feita com sucesso')
                                 else:
                                     print("essa conta nao existe")
                                     print("\n")
@@ -103,7 +110,7 @@ while True:
                             print("\n")
 
                     elif escolhaMenu == 5:
-                        print('Ultima ação feita foi : ', userUltimaAcao)
+                        print('Ultima ação feita foi : ',userUltimaAcao)
                         print("\n")
                     elif escolhaMenu == 6:
                         print(" Você saiu do Menu ")
@@ -130,5 +137,3 @@ while True:
     else:
         print(" Essa opção não existe tente novamente")
         print("\n")
-
-
